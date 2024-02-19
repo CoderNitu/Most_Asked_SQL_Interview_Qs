@@ -6,5 +6,6 @@ SQL (Structured Query Language) is one of the hardest skills to clear Data Analy
 
 # Tools and Technologies
 
-(1) PostgreSQL
-(2) PgAdmin4
+1. PostgreSQL
+2. PgAdmin4
+ 
