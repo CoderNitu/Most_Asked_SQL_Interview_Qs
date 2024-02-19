@@ -1,0 +1,7 @@
+"cust_id","cust_name","age","city","salary","sal_status","address_id","city_id"
+4,"Sophia",35,"UK                                                ","45000","medium","200","40"
+3,"Leo",27,"Russia                                            ","62000","high","200","40"
+6,"Manas",27,"Guwahati                                          ","16000","low","300","30"
+1,"Jolie",26,"California                                        ","56000","low","200","30"
+5,"Zayn",25,"America                                           ","78000","high","400","40"
+2,"Sam",19,"Delhi                                             ","25000","low","100","10"
