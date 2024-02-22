@@ -95,6 +95,56 @@ FROM customer) n
 WHERE sl_no=3;
 
 
+--- Q3. List all the matches between teams, if matches are played once.
+
+--- # To find out how many matches will be played, if two particular teams play only once, we will use Permutation 
+---   and combination. Here, we will use a combination formula as we need to find the number of matches played by selecting the
+---   the different teams from a collection of teams.
+
+---  n = 4 (no of teams), r=2 (number of teams played in a match)
+--- nCr = n!/(n-r)! r!
+---     = 4!/(4-2)! 2!
+---     = 4!/4
+---     = 4*3*2*1/4
+---     = 6  (no. of match the teams will play)
+
+SELECT * FROM match
+
+WITH cte AS(
+	SELECT *, ROW_NUMBER() OVER(ORDER BY team) AS sl_no FROM match
+)
+
+SELECT a.team AS match_sc,b.team AS match_sc FROM cte a
+JOIN cte b
+ON a.team <> b.team
+WHERE a.sl_no<b.sl_no;
+
+
+--- Q4. Write a query to get the output from the input emp table
+
+SELECT * FROM emp
+
+WITH cte AS
+(SELECT *,CONCAT(id,'  ',name) AS con,NTILE(4) OVER(ORDER BY id ASC) AS groups 
+FROM emp)
+
+SELECT STRING_AGG(con,', ') AS result,groups
+FROM cte
+GROUP BY groups
+ORDER BY groups ASC;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
